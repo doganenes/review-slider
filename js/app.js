@@ -1,59 +1,96 @@
-// const peopleArray = [
-//   {
-//     id: 1,
-//     image:
-//       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png",
-//   },
-//   {
-//     id: 2,
-//     image:
-//       "https://cdn.pixabay.com/photo/2015/04/23/22/00/t   ree-736885__480.jpg",
-//   },
-//   {
-//     id: 3,
-//     image:
-//       "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
-//   },
-//   {
-//     id: 4,
-//     image:
-//       "https://media.istockphoto.com/id/1322277517/photo/wild-grass-in-the-mountains-at-sunset.jpg?s=612x612&w=0&k=20&c=6mItwwFFGqKNKEAzv0mv6TaxhLN3zSE43bWmFN--J5w=",
-//   },
-//   {
-//     id: 5,
-//     image:
-//       "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-//   },
-// ];
+const peopleArray = [
+  {
+    id: 1,
+    name: "Maison Henry",
+    image: "../img/profile-1.jpg",
+    ratings: 3.7,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat odio, vulputate ut quam id, sodales tempus felis. Ut varius sodales accumsan. Maecenas iaculis ultrices tempus. Cras porttitor eget mauris ut dapibus. Integer ornare dictum metus, ac commodo nisl varius quis.",
+  },
+  {
+    id: 2,
+    name: "Greta Jarvis",
+    image: "../img/profile-2.jpg",
+    ratings: 4.8,
+    description:
+      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed ultrices felis vel euismod laoreet. Maecenas efficitur ante neque, venenatis cursus justo vestibulum at. Ut luctus condimentum eros, a placerat odio vulputate non. In maximus commodo diam eget posuere.",
+  },
+  {
+    id: 3,
+    name: "Charlie Castro",
+    image: "../img/profile-3.jpg",
+    ratings: 2.6,
+    description:
+      "Morbi sed tortor aliquam, facilisis felis at, dapibus augue. Maecenas at felis molestie, venenatis eros vel, aliquam ligula. Fusce rhoncus eros eros, nec scelerisque lorem pharetra at.",
+  },
+  {
+    id: 4,
+    name: "Evie Martin",
+    image: "../img/profile-4.jpg",
+    ratings: 3.9,
+    description:
+      "Fusce pellentesque eget lorem ut fermentum. Phasellus consectetur metus eget erat ornare, eget tempus felis porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas malesuada magna vitae tortor pretium, et efficitur lectus pulvinar. Suspendisse potenti. Mauris aliquet, lectus sodales scelerisque varius, magna elit malesuada justo, eget pellentesque massa dui ut magna.",
+  },
+  {
+    id: 5,
+    name: "Abbas Norman",
+    image: "../img/profile-5.jpg",
+    ratings: 4.3,
+    description:
+      "Ut mollis maximus tortor, vitae finibus mi accumsan ut. Cras vel velit et mi convallis consectetur. Nullam mi diam, commodo vel turpis at, vehicula aliquam arcu. Proin lobortis nisi gravida interdum sollicitudin. Aliquam sed convallis risus. Nulla quis viverra nisl.",
+  },
+];
 
-// const image = document.getElementById("img");
-// const prevBtn = document.getElementById("prev");
-// const nextBtn = document.getElementById("next");
-// const personName = document.querySelector(".personName");
-// const desc = document.querySelector(".desc");
-// let counter = 1;
+// selectors
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   loadImage();
-// });
+const image = document.getElementById("img");
+const personName = document.querySelector(".personName");
+const desc = document.querySelector(".desc");
+let counter = 1;
 
-// function loadImage() {
-//   const item = peopleArray[counter];
-//   img.src = item.image;
-// }
+// ratings
 
-// nextBtn.addEventListener("click", () => {
-//   counter += 1;
-//   if (counter > peopleArray.length - 1) {
-//     counter = 0;
-//   }
-//   loadImage(counter);
-// });
+// functions
+window.addEventListener("DOMContentLoaded", () => {
+  loadImage();
+  getRatings();
+});
 
-// prevBtn.addEventListener("click", () => {
-//   counter -= 1;
-//   if (counter < 0) {
-//     counter = peopleArray.length - 1;
-//   }
-//   loadImage(counter);
-// });
+function loadImage() {
+  const item = peopleArray[counter];
+  image.src = item.image;
+  personName.textContent = item.name;
+  desc.textContent = item.description;
+}
+
+const starsTotal = 5;
+
+function getRatings() {
+  for (let rating in rating) {
+    const starPercentage = (rating[rating] / starsTotal) * 100;
+
+    const starPercentageRounded = `${(starPercentage / 10) * 10}%`;
+    console.log(starPercentageRounded);
+
+    document.querySelector(`.${rating} .stars-inner`).style.width =
+      starPercentageRounded;
+  }
+}
+
+nextBtn.addEventListener("click", () => {
+  counter += 1;
+  if (counter > peopleArray.length - 1) {
+    counter = 0;
+  }
+  loadImage(counter);
+});
+
+prevBtn.addEventListener("click", () => {
+  counter -= 1;
+  if (counter < 0) {
+    counter = peopleArray.length - 1;
+  }
+  loadImage(counter);
+});
