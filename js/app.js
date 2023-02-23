@@ -50,8 +50,6 @@ const desc = document.querySelector(".desc");
 
 window.addEventListener("DOMContentLoaded", () => {
   loadImage();
-  getRatings();
-  
 });
 
 let counter = 0;
@@ -61,19 +59,15 @@ function loadImage() {
   image.src = item.image;
   personName.textContent = item.name;
   desc.textContent = item.description;
+  getRatings(counter);
 }
 
 const starsTotal = 5;
-function getRatings() {
-  for (let person of peopleArray) {
-    const elements = document.querySelectorAll(".person .stars-inner");
-    elements.forEach((element, index) => {
-      const rating = peopleArray[index].ratings;
-      const starPercentage = (rating / starsTotal) * 100;
-      const starPercentageRounded = `${(starPercentage / 10) * 10}%`;
-      element.style.width = starPercentageRounded;
-    });
-  }
+function getRatings(counter) {
+  const item = peopleArray[counter];
+  const starsPercentage = (item.ratings / starsTotal) * 100;
+  const starPercentageRounded = `${(starsPercentage / 10) * 10}%`;
+  document.querySelector(".stars-inner").style.width = starPercentageRounded;
 }
 
 nextBtn.addEventListener("click", () => {
