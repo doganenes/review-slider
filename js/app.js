@@ -41,22 +41,20 @@ const peopleArray = [
   },
 ];
 
-// selectors
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 
 const image = document.getElementById("img");
 const personName = document.querySelector(".personName");
 const desc = document.querySelector(".desc");
-let counter = 1;
 
-// ratings
-
-// functions
 window.addEventListener("DOMContentLoaded", () => {
   loadImage();
   getRatings();
+  
 });
+
+let counter = 0;
 
 function loadImage() {
   const item = peopleArray[counter];
@@ -66,16 +64,15 @@ function loadImage() {
 }
 
 const starsTotal = 5;
-
 function getRatings() {
-  for (let rating in rating) {
-    const starPercentage = (rating[rating] / starsTotal) * 100;
-
-    const starPercentageRounded = `${(starPercentage / 10) * 10}%`;
-    console.log(starPercentageRounded);
-
-    document.querySelector(`.${rating} .stars-inner`).style.width =
-      starPercentageRounded;
+  for (let person of peopleArray) {
+    const elements = document.querySelectorAll(".person .stars-inner");
+    elements.forEach((element, index) => {
+      const rating = peopleArray[index].ratings;
+      const starPercentage = (rating / starsTotal) * 100;
+      const starPercentageRounded = `${(starPercentage / 10) * 10}%`;
+      element.style.width = starPercentageRounded;
+    });
   }
 }
 
