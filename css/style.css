@@ -47,14 +47,14 @@ body {
   padding: 2rem 0;
 }
 
-.personName{
+.personName {
   font-weight: bold;
   margin-bottom: .5rem;
 }
 
 
-.number-rating{
-  font-size: .85rem;  
+.number-rating {
+  font-size: .85rem;
   font-weight: 400;
 }
 
@@ -67,6 +67,7 @@ body {
   width: 80%;
   opacity: 0.7;
 }
+
 #img {
   width: 12rem;
   height: 12rem;
@@ -114,20 +115,10 @@ body {
   cursor: pointer;
   padding: 1rem;
   font-size: 3rem;
-  transition: .6s ease-in-out;
-}
-
-.slideBtn:hover{
-  background-color: black;
-}
-
-.slideBtn:hover i{
-  color: white;
 }
 
 i {
   color: black;
-  transition: .6s ease-in-out;
 }
 
 footer {
