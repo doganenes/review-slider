@@ -9,7 +9,7 @@ const peopleArray = [
   },
   {
     id: 2,
-    name: "Greta Jarvis",
+    name: "Charlie Castro",
     image: "../img/profile-2.jpg",
     ratings: 4.8,
     description:
@@ -17,23 +17,23 @@ const peopleArray = [
   },
   {
     id: 3,
-    name: "Charlie Castro",
+    name: "Greta Jarvis",
     image: "../img/profile-3.jpg",
     ratings: 2.6,
     description:
-      "Morbi sed tortor aliquam, facilisis felis at, dapibus augue. Maecenas at felis molestie, venenatis eros vel, aliquam ligula. Fusce rhoncus eros eros, nec scelerisque lorem pharetra at.",
+      "Morbi sed tortor aliquam, facilisis felis at, dapibus augue. Maecenas at felis molestie, venenatis eros vel, aliquam ligula. Fusce rhoncus eros eros, nec scelerisque lorem pharetra at.Illum ut vero nobis rem deleniti aspernatur voluptates perferendis voluptate esse. Velit deleniti rerum aperiam illo, neque et.",
   },
   {
     id: 4,
-    name: "Evie Martin",
+    name: "Bernard Wiggins",
     image: "../img/profile-4.jpg",
     ratings: 3.9,
     description:
-      "Fusce pellentesque eget lorem ut fermentum. Phasellus consectetur metus eget erat ornare, eget tempus felis porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas malesuada magna vitae tortor pretium, et efficitur lectus pulvinar. Suspendisse potenti. Mauris aliquet, lectus sodales scelerisque varius, magna elit malesuada justo, eget pellentesque massa dui ut magna.",
+      "Fusce pellentesque eget lorem ut fermentum. Phasellus consectetur metus eget erat ornare, eget tempus felis porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas malesuada magna vitae tortor pretium, et efficitur lectus pulvinar. Suspendisse potenti.",
   },
   {
     id: 5,
-    name: "Abbas Norman",
+    name: "Evie Martin",
     image: "../img/profile-5.jpg",
     ratings: 4.3,
     description:
@@ -46,6 +46,7 @@ const nextBtn = document.getElementById("next");
 
 const image = document.getElementById("img");
 const personName = document.querySelector(".personName");
+const numberRating = document.querySelector(".number-rating");
 const desc = document.querySelector(".desc");
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -58,6 +59,7 @@ function loadImage() {
   const item = peopleArray[counter];
   image.src = item.image;
   personName.textContent = item.name;
+  numberRating.textContent = item.ratings;
   desc.textContent = item.description;
   getRatings(counter);
 }
