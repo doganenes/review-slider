@@ -1,5 +1,8 @@
 # Review Slider
 Review Slider Project using HTML5, CSS3, and Javascript.
+
+Live Demo: [https://review-slider-livedemo.netlify.app/](https://review-slider-livedemo.netlify.app/)
+
 ## Project Views
-![img1](https://user-images.githubusercontent.com/86846812/221154038-25c68dc2-c438-403e-a42c-c735bed1cc83.png)
-![img2](https://user-images.githubusercontent.com/86846812/221154619-a22328ab-154b-446b-ab21-0012750f7926.png)
+![slideImg-1](https://user-images.githubusercontent.com/86846812/221359053-a6111c05-bbae-4454-b503-e209a28c7b65.png)
+![slideImg-2](https://user-images.githubusercontent.com/86846812/221359055-df6a50a8-039e-42c9-ad1b-42cc8cd14612.png)
